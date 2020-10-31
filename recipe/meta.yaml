@@ -1,6 +1,6 @@
 {% set name = "Events" %}
-{% set version = "0.3" %}
-{% set sha256 = "f4d9c41a5c160ce504278f219fe56f44242ca63794a0ad638b52d1e087ac2a41" %}
+{% set version = "0.4" %}
+{% set sha256 = "01d9dd2a061f908d74a89fa5c8f07baa694f02a2a5974983663faaf7a97180f5" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -33,7 +33,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Python Event Handling the C# Style'
+  summary: Python Event Handling the C# Style
   description: |
     Bringing the elegance of C# EventHandler to Python
   doc_url: https://events.readthedocs.org
